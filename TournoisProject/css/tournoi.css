@@ -1,0 +1,154 @@
+h3{
+    text-align: center;
+}
+
+.bracket{
+    width:100%;
+    height:100%;
+}
+.phase{
+    width:100%;
+    height:5%;
+}
+.huit_final{
+    float:left;
+    //background-color:magenta;
+    width:20%;
+    height:100%;
+}
+.quart_final{
+    float:left;
+    //background-color:red;
+    width:18%;
+    height:100%;
+    margin-left:2.5%;
+}
+.demi_final{
+    float:left;
+    //background-color:green;
+    width:18%;
+    height:100%;
+    margin-left:2.5%;
+}
+.final{
+    float:left;
+    //background-color:blue;
+    width:18%;
+    height:100%;
+    margin-left:2.5%;
+}
+.vainqueur{
+    float:left;
+    width:15%;
+    height:100%;
+    margin-left:2.5%;
+    margin-top:10%;
+}
+
+.huit_game{
+    margin-bottom:25px;
+    background-color:yellow;
+}
+.quart_game{
+    margin-bottom:95px;
+    background-color:yellow;
+}
+.demi_game{
+    margin-bottom:235px;
+    background-color:yellow;
+}
+.final_game{
+    margin-top:240px;
+    background-color:yellow;
+}
+
+.huit_game div:hover{
+    background-color:yellow;
+}
+.quart_game div:hover{
+    background-color:yellow;
+}
+.demi_game div:hover{
+    background-color:yellow;
+}
+.final_game div:hover{
+    background-color:yellow;
+}
+
+.box_game{
+    background-color:white;
+    border:2px solid black;
+    border-radius: 2px 2px 2px 2px;
+    text-overflow:hidden;
+}
+.box_game_A{
+    width:100%;
+    border-bottom: 1px solid black;
+    
+}
+
+.score_1{
+    width:9.5%;
+    float:left;
+    border-left:1px solid black;
+}
+.score_2{
+    width:9%;
+    float:left;
+    border-left:1px solid black;
+}
+.team_1{
+    float:left;
+    width:75%;
+}
+.team_2{
+    float:left;
+    width:75%;
+}
+
+.clear{
+    clear: both;
+}
+.espace{
+    float:left;
+    width:10%;
+}
+
+.espace_title{
+    width:100%;
+    height:8.4%;
+    background-color:magenta;
+}
+
+.groupe{
+    width:100%;
+    height:100%;
+}
+
+.affichage_groupe{
+    float:left;
+    margin-left:5%;
+    margin-bottom: 3%;
+    text-align: center;
+}
+
+.tableau_groupe
+{   
+    border: 3px solid orange;
+    border-radius: 10px;
+}
+
+.bordure_th
+{ 
+    border: 3px solid orange;
+}
+
+.bordure_td
+{ 
+    border: 1px solid orange;
+}
+
+.gpr:hover
+{
+    background-color:yellow;
+}
