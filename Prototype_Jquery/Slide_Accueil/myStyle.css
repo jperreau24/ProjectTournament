@@ -1,0 +1,357 @@
+@font-face
+{
+	font-family: 'journal-webfont';
+	src: url('polices/journal-webfont/journal-webfont.eot');
+	src: url('polices/journal-webfont/journal-webfont.eot?iefix') format('eot'),
+	     url('polices/journal-webfont/journal-webfont.woff') format('woff'),
+	     url('polices/journal-webfont/journal-webfont.ttf') format('truetype'),
+	     url('polices/journal-webfont/journal-webfont.svg#webfont') format('svg');
+}
+
+body
+{
+	margin : 0;
+	background-color: white;
+}
+
+#bloc_page
+{
+	width : 80%;
+	height: 1000px;
+	margin: auto;
+}
+
+/*
+	Header personnalisation
+*/
+
+#theHeader
+{
+	background-color : orange;
+	height: 150px;
+	box-shadow:	5px 5px 5px orange;
+	text-shadow: 1px 1px 5px black;
+}
+
+header
+{
+	height: 70px;
+	background: black;
+	margin-top: 15px;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+header div, header nav
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+header div
+{
+	width: 30%;
+	height : 100%;
+}
+
+header nav
+{
+	width: 70%;
+	text-align: center;
+}
+
+header nav ul
+{
+	list-style-type: none;
+	padding-left: 0px;	
+}
+
+header nav ul li
+{
+	display: inline-block;
+}
+
+header a
+{
+	color: white;
+	margin-right: 15px;
+	text-decoration: none;
+	font-size: 30px;
+	display: block;
+	width: 150px;
+	text-align: center;
+}
+
+#theMenu
+{
+	margin: auto;
+	width: 600px;
+}
+
+
+#theMenu ul
+{
+	list-style-type: none;
+	padding-left: 0px;	
+	margin-top: 0px;
+}
+
+#theMenu ul li
+{
+	display: inline-block;
+	height: 35px;
+}
+
+#theMenu a
+{
+	color: white;
+	text-decoration: none;
+	font-family: journal-webfont;
+	font-size: 30px;
+	display: block;
+	width: 150px;
+	text-align: center;
+}
+
+
+#theFooter
+{
+	height: 150px;
+}
+
+#theHeader h1
+{
+	margin: 0;
+	text-align: center;
+	font-size: 80px;
+	font-family: journal-webfont;
+}
+
+#description
+{
+	height: 250px;
+	background-color: gray;
+}
+
+p
+{
+	color : orange;
+}
+
+/* Slide */
+
+#Id_Slide
+{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	padding:20px 20px 30px 20px;
+	width: 80%;
+	height: 420px;
+	/* CSS3 effects */
+	background: linear-gradient(#FFF, #FFF 20%, #EEE 80%, #DDD);
+	border-radius: 20px 20px 0px 0px;
+	box-shadow: 0 0 3px rgba(0,0,0, 0.2);
+}
+
+.c_ImageSlide 
+{
+	width: 100%;
+	height: 420px;
+}
+
+#Id_SlideWindow
+{
+	background: red;
+	overflow: hidden;
+	position: relative;
+	border: 1px solid #ddd;
+	height: 100%;
+	width: 100%;
+}
+
+#Id_Container
+{
+	position: relative;
+	height: 100%;
+	width: 400%;
+
+}
+
+#Id_Description
+{
+	margin-top: 20px;
+	height: 150px;
+}
+
+.c_FigSlide
+{
+	margin: 0px;
+	padding: 0px;
+	display: inline-block;
+	position:relative;
+	width: 25%;
+}
+
+.c_FigSlide figcaption
+{
+	position:absolute;
+	left:0px; 
+	right:0px; 
+	bottom:4px;
+	padding: 0px;
+	border-top: 1px solid rgb(225,225,225);
+	text-align:center;
+	letter-spacing: 0.05em;
+	word-spacing: 0.05em;
+	font-family: Georgia, Times, serif;
+	background: rgba(255,255,255,0.7);
+	color: #555;
+	text-shadow: -1px -1px 0 rgba(255,255,255,0.3);
+	height: 75px;
+	line-height: 70px;
+}
+
+/* Boutons de commande du slider */
+
+.dots_commands  
+{
+	padding:0;
+	margin: 5px 0 0 0;
+	text-align: center;
+	vertical-align: center;
+}
+
+.dots_commands li 
+{
+	display: inline-block;
+}
+/*
+.dots_commands a 
+{
+	position: relative;
+	display: inline-block;
+	height:10px; 
+	width: 10px;
+	margin: 0 5px;
+	text-indent: -9999px;
+	background: #fff;
+	border-radius: 50%;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.55) inset;
+}
+*/
+.C_ChoiceSlide
+{
+	position: relative;
+	display: inline-block;
+	height:10px; 
+	width: 10px;
+	margin: 0 5px;
+	background: #fff;
+	border-radius: 50%;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.55) inset;
+}
+
+#Id_Pause
+{
+	background: url('images/pause.png') no-repeat;
+	opacity: 0.4;
+	top:5px;
+    right:5px;
+}
+
+#Id_Play
+{
+	background: url('images/play.png') no-repeat;
+	top:5px;
+    right:5px;
+    display: none;
+}
+
+#Id_Right
+{	
+	background: url('images/right.png') no-repeat;
+	top:175px;
+    right:5px;
+    opacity: 0.4;
+}
+
+#Id_Left
+{
+	background: url('images/left.png') no-repeat;
+	top:175px;
+    left:5px;
+    opacity: 0.4;
+}
+
+#Id_Left, #Id_Right, #Id_Play, #Id_Pause
+{
+	height: 30px;
+	width: 30px;	
+	background-size: 100% 100%;
+	background-color: transparent;
+	position: absolute;
+}
+
+#Id_Left:hover, #Id_Right:hover, #Id_Pause:hover, #Id_Play
+{
+	opacity: 1;
+}
+
+/* Barre de progression du slider */
+
+#Id_ProgressBar
+{
+	position: absolute;
+	background-color: orange;
+	bottom: 0px;
+	width: 0px;
+	height: 3px;
+}
+
+.C_ChoiceSlide div
+{
+	position: relative;
+	margin: 2px;
+	height:6px; 
+	width: 6px;
+	background: gray;
+	border-radius: 50%;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.55) inset;
+	display: none;
+}
+
+
+#Id_Slide:before,
+#Id_Slide:after {
+	position: absolute;
+	bottom:16px;
+	z-index: -10;
+	width: 50%;
+	height: 20px;
+	content: " ";
+	background: rgba(0,0,0,0.1);
+	border-radius: 50%;
+	box-shadow: 0 0 3px rgba(0,0,0, 0.4), 0 20px 10px rgba(0,0,0, 0.7);
+}
+#Id_Slide:before {
+	left:0;
+	transform: rotate(-4deg);
+}
+#Id_Slide:after {
+	right:0;
+	transform: rotate(4deg);
+}
+
+
+#Id_Slide:before {
+	left:0;
+	transform: rotate(-4deg);
+}
+#Id_Slide:after {
+	right:0;
+	transform: rotate(4deg);
+}
+
+

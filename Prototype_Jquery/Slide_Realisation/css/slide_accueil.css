@@ -1,0 +1,140 @@
+#slideshow {
+    width:60%;
+    height:60%;
+    position:absolute;
+    margin-left:15%;
+}
+
+#slideshow #slideshowWindow {
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    position:relative;
+    overflow:hidden;
+    
+} 
+
+.slide { 
+    margin:0;
+    padding:0;
+    width:25%;
+    height:100%;
+    position:relative;
+}
+
+.slideText {
+    position:absolute;
+    top:80%;
+    left:0px;
+    width:100%;
+    height:20%;
+    background: #fff;
+    background: rgba(255,255,255,0.7);
+    margin:0;
+    padding:0;
+    color:#555;
+    font-family: Georgia, Times, serif;
+}
+
+.slideText p {
+    text-align:center;
+}
+
+.img {
+    width:100%;
+    height:100%;
+}
+
+.nav { 
+    display:block;
+    position:absolute;
+    cursor:pointer;
+}
+
+.nav_play_stop { 
+    display:block;
+    position:absolute;
+    cursor:pointer;
+}
+
+#leftNav {
+    top:40%;
+    left:3%;
+    width:5%;
+    height:5%;
+    background-color:red;
+    z-index:999;
+}
+
+#rightNav {
+    top:40%;
+    left:92%;
+    width:5%;
+    height:5%;
+    background-color:blue;
+    z-index:999;
+} 
+#pause {
+    top:3%;
+    left:92%;
+    width:5%;
+    height:5%;
+    background-color:yellow;
+    z-index:999;
+}
+
+#play {
+    top:3%;
+    left:92%;
+    width:5%;
+    height:5%;
+    background-color:green;
+    z-index:999;
+}
+
+
+
+
+/*******************Pop-up**********************************
+***********************************************************/
+
+#fade { /*--Masque opaque noir de fond--*/
+    display: none; /*--masqué par défaut--*/
+    background: #000;
+    position: fixed; left: 0; top: 0;
+    width: 100%; height: 100%;
+    opacity: .80;
+    z-index: 9999;
+}
+.popup_block{
+    display: none; /*--masqué par défaut--*/
+    background: #fff;
+    padding: 20px;
+    border: 20px solid #ddd;
+    float: left;
+    font-size: 1.2em;
+    position: fixed;
+    top: 50%; left: 50%;
+    z-index: 99999;
+    /*--Les différentes définitions de Box Shadow en CSS3--*/
+    -webkit-box-shadow: 0px 0px 20px #000;
+    -moz-box-shadow: 0px 0px 20px #000;
+    box-shadow: 0px 0px 20px #000;
+    /*--Coins arrondis en CSS3--*/
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+img.btn_close {
+    float: right;
+    margin: -55px -55px 0 0;
+}
+/*--Gérer la position fixed pour IE6--*/
+*html #fade {
+    position: absolute;
+}
+
+*html .popup_block {
+    position: absolute;
+}

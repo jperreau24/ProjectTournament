@@ -1,0 +1,324 @@
+<html>
+    <head>
+        <link href="css/slide_realisation.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="js/jquery-1.11.2.min.js"></script>
+        <title>test slide réalisation</title>  
+    </head>
+    <body>
+        <div class="espaceRubrique">
+            <div class="rubrique" id="porte"><img class="imgrubrique" src="Images/portes.jpg" alt="" /><h3>Portes</h3></div>
+            <div class="rubrique" id="fenetre"><img class="imgrubrique" src="Images/fenetres.jpg" alt="" /><h3>Fenêtres</h3></div>
+            <div class="rubrique" id="charpente"><img class="imgrubrique" src="Images/charpentes.jpg" alt="" /><h3>Charpentes</h3></div>
+        </div>
+        
+        <!-- multiple image -->
+        <div class="div_img clear">
+            <div><img class="img_d" data-ru="porte" data-rel='0' src="Images/Ahri.jpg" alt="" /></div>
+            <div><img class="img_d" data-ru="fenetre" data-rel='1' src="Images/starwars.jpg" alt="" /></div>
+            <div><img class="img_d" data-ru="charpente" data-rel='1' src="Images/toad.jpg" alt="" /></div>
+            
+            <div><img class="img_d clear" data-ru="fenetre" data-rel='3' src="Images/pandora_tower.jpg" alt="" /></div>
+            <div><img class="img_d" data-ru="porte" data-rel='3' src="Images/mario.png" alt="" /></div>
+            <div><img class="img_d" data-ru="charpente" data-rel='0' src="Images/a7x.jpg" alt="" /></div>
+            
+            <div><img class="img_d clear" data-ru="porte" data-rel='2' src="Images/halo.jpg" alt="" /></div>
+            <div><img class="img_d" data-ru="charpente" data-rel='2' src="Images/charpentes.jpg" alt="" /></div>
+            <div><img class="img_d" data-ru="porte" data-rel='1' src="Images/akali.jpg" alt="" /></div>
+        </div>
+        
+
+        <!--part1-->
+        <div class="slideshow clear">
+            <div class="slideshowWindow">
+                <div class="slidePorte">
+                    <img class="poplight img" data-rel="popup" data-img="Ahri.jpg"  src="Images/Ahri.jpg" alt="" />
+                    <div class="slideText">
+                        <p class="slideDes">Ahri</p>
+                    </div>
+                </div>
+                <div class="slidePorte"> 
+                    <img class="poplight img" data-rel="popup" data-img="Akali.jpg"  src="Images/Akali.JPG" alt="" />
+                    <div class="slideText">
+                        <p class="slideDes">Akali</p>
+                    </div>
+                </div>
+                <div class="slidePorte">
+                    <img class="poplight img" data-rel="popup" data-img="halo.jpg"  src="Images/halo.jpg" alt="" />
+                    <div class="slideText">
+                        <p class="slideDes">Halo : Master Chief is ready !</p>
+                    </div>
+                </div>
+                <div class="slidePorte">
+                    <img class="poplight img" data-rel="popup" data-img="mario.png"  src="Images/mario.png" alt="" />
+                    <div class="slideText">
+                        <p class="slideDes">Let's go ! It's me ! Marioooo !</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--part2-->
+        <div class="slideshow">
+            <div class="slideshowWindow">
+                <div class="slideFenetre"> 
+                    <img class="poplight img" data-rel="popup" data-img="paysage.jpg"  src="Images/paysage.jpg" alt="" />
+                    <div class="slideText">
+                        <p class="slideDes">The second moon</p>
+                    </div>
+                </div>
+                <div class="slideFenetre"> 
+                    <img class="poplight img" data-rel="popup" data-img="starwars.jpg"  src="Images/starwars.jpg" alt="" />
+                    <div class="slideText">
+                        <p class="slideDes">Starwars</p>
+                    </div>
+                </div>
+                <div class="slideFenetre">
+                    <img class="poplight img" data-rel="popup" data-img="shugarl.jpg"  src="Images/shugarl.jpg" alt="" />
+                    <div class="slideText">
+                        <p class="slideDes">shugarl</p>
+                    </div>
+                </div>
+                <div class="slideFenetre"> 
+                    <img class="poplight img" data-rel="popup" data-img="pandora_tower.jpg"  src="Images/pandora_tower.jpg" alt="" />
+                    <div class="slideText">
+                        <p class="slideDes">pandora</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--part3-->
+        <div class="slideshow">
+            <div class="slideshowWindow">
+                <div class="slideCharpente"> 
+                    <img class="poplight img" data-rel="popup" data-img="a7x.jpg"  src="Images/a7x.jpg" alt="" />
+                    <div class="slideText">
+                        <p class="slideDes">a7x</p>
+                    </div>
+                </div>
+                <div class="slideCharpente"> 
+                    <img class="poplight img" data-rel="popup" data-img="toad.jpg"  src="Images/toad.jpg" alt="" />
+                    <div class="slideText">
+                        <p class="slideDes">Toad</p>
+                    </div>
+                </div>
+                <div class="slideCharpente">
+                    <img class="poplight img" data-rel="popup" data-img="charpentes.jpg"  src="Images/charpentes.jpg" alt="" />
+                    <div class="slideText">
+                        <p class="slideDes">charpentes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Contenu du pop up-->
+        <div id="popup" class="popup_block"></div>
+        <!--Fin du pop up-->
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+
+                var slideRubrique;                          //défini quel slide utiliser
+                var rubrique;                               //pour définir un id unique au slidesHolder
+                var slideShowInterval = null;
+                var nbSlide;                                //défini le nombre de slide par rubrique
+                var currentPosition;                        //position du slide (images)
+                var slideWidth;                             //taille des slides                
+                var slides;                                 //quel slide est demandé par l'utilisateur
+                var numberOfSlides;                         //nombre d'image par slide 
+                var speed;                                  // vitesse de défilement
+                var pause = 0;                              //défini si le slide est en pause ou non (1 = oui, 0 = non)
+                var positionSlide = -1;                          //determine la position du slide à partir du tableau du slide
+
+                $("#porte").click(function() {              //lors du clique de l'utilisateur
+                    stopSlide();                            //réinitialise l'ancien slide
+                    rubrique = "Porte";                      // sa change la rubrique
+                    configSlide();                           //sa configure le slide choisi
+                });
+
+                $("#fenetre").click(function() {            //idem
+                    stopSlide();   
+                    rubrique = "Fenetre";
+                    configSlide();
+                });
+
+                $("#charpente").click(function() {          //idem
+                    stopSlide(); 
+                    rubrique = "Charpente";
+                    configSlide();
+                });
+
+                function configSlide()                      //configure le slide selon la rubrique choisi  
+                {
+                    $('.slideshow').show();
+                    $('.slideshowWindow').show();
+                    $('.div_img').hide();
+                    slideRubrique = $('.slide' + rubrique);         //lors du clique de l'utilisateur sa désactive 
+                    removeActive();                                 //tous les slides puis active celui demandé 
+                    $('.slide' + rubrique).addClass("active");      //affichage du slide
+                    $('#pause').show();
+                    nbSlide = 100 / $('.slide' + rubrique).length;     //permet de calculer la taille des images par rubrique pour
+                    $('.slide' + rubrique).css("width", nbSlide + "%"); //ajuster la taille des images (la taille est différente selon le nombre de slide (25% pour 4 images et 33% pour 3 images)
+                    spendSlide();                           //va animer le slide
+                }
+
+                function spendSlide() {                     //permet l'animation du slide
+
+                    currentPosition = 0;
+                    slideWidth = $(".slideshowWindow").width();
+                    slides = slideRubrique;             // quel slide est demandé par l'utilisateur
+                    numberOfSlides = slides.length;
+                    speed = 5000;                       // vitesse de défilement
+
+                    clearInterval(slideShowInterval);
+                    slideShowInterval = setInterval(changePosition, speed);
+                    slides.wrapAll('<div id="slidesHolder' + rubrique + '"></div>'); // entoure l'élément d'un div
+                    slides.css({'float': 'left'});
+                    $('#slidesHolder' + rubrique).css('width', slideWidth * numberOfSlides);
+                    
+                    //on crée les flèches mnt pour éviter les bugs de navigation entre les slides
+                    $('.slideshow').prepend('<span class="nav" id="leftNav" style="display:none"></span>'); 
+                    $('.slideshow').prepend('<span class="nav" id="rightNav" style="display:none"></span>');
+                    $('.slideshow').prepend('<span class="nav_play_stop" id="pause" style="display:none"></span>');
+                    $('.slideshow').prepend('<span class="nav_play_stop" id="play" style="display:none"></span>');
+                    $('#pause').show();
+                    
+                    //si l'utilisateur a demandé un slide à partir le tableau d'image
+                    //le slide va directement au slide et à l'image correspondante 
+                    //(si -1 aucun slide n'a été demandé directement, après avoir changé la position, on le remet à -1)
+                    if(positionSlide != "-1")  
+                    {
+                        currentPosition = positionSlide;
+                        moveSlide();
+                        positionSlide = "-1";
+                    }
+
+                    manageNav(currentPosition);
+
+                    $('.nav').click(function() {                //lorque l'on clique sur une flèche de navigation
+                        currentPosition = ($(this).attr('id') == 'rightNav') ? currentPosition + 1 : currentPosition - 1;
+                        manageNav(currentPosition);
+                        clearInterval(slideShowInterval);
+                        if(pause==0) {
+                            slideShowInterval = setInterval(changePosition, speed);
+                        }
+                        moveSlide();
+                    });
+
+                    $('#pause').click(function() {              //met en pause le slide
+                        clearInterval(slideShowInterval);
+                        pause = 1;
+                        $('#pause').hide();
+                        $('#play').show();
+                    });
+
+                    $('#play').click(function() {               //relance le slide
+                        clearInterval(slideShowInterval);
+                        slideShowInterval = setInterval(changePosition, speed);
+                        pause = 0;
+                        $('#play').hide();
+                        $('#pause').show();
+                    });
+
+                    function manageNav(position) {               //affiche ou cache la flèche de navigation
+                        if (position == 0) {$('#leftNav').hide();}
+                        else {$('#leftNav').show();}
+                        if (position == numberOfSlides - 1) {$('#rightNav').hide();}
+                        else {$('#rightNav').show();}
+                    }
+
+                    function changePosition() {
+                        if (currentPosition == numberOfSlides - 1)
+                        {
+                            currentPosition = 0;
+                            manageNav(currentPosition);
+                        } else {
+                            currentPosition++;
+                            manageNav(currentPosition);
+                        }
+                        moveSlide();
+                    }
+                }
+
+                function moveSlide() {
+                    $('#slidesHolder' + rubrique).animate({'marginLeft': slideWidth * (-currentPosition)});
+                }
+                
+                function stopSlide() {
+                    clearInterval(slideShowInterval);
+                    pause = 0;
+                    $('#slidesHolder' + rubrique).animate({'marginLeft': slideWidth * (-0)});
+                    $('#pause').hide();
+                    $('#play').hide();
+                    $('#leftNav').hide();
+                    $('#rightNav').hide();
+                    $('.nav').remove();
+                    $('.nav_play_stop').remove();
+                }
+
+                function removeActive() {                   // désactive tout les slides
+                    $(".active").removeClass("active");
+                }
+
+
+                /******************************Pop-up***************************************
+                 * ************************************************************************/
+
+                $('img.poplight').click(function() {
+                    var popID = $(this).data('rel'); //Trouver la pop-up correspondante
+                    var popWidth = 80; // largeur de la pop-up
+                    var popHeight = 80;
+                    var imagePop = $(this).data('img'); //image à mettre dans la pop-up
+
+                    // ajoute l'image correspondante à la popup
+                    $('#' + popID).prepend('<img class="imgpop img" src="Images/' + imagePop + '" alt="" />');
+
+                    //Faire apparaitre la pop-up et ajouter le bouton de fermeture
+                    $('#' + popID).fadeIn().css({'width': popWidth + '%', 'height' : popHeight + '%'})
+                            .prepend('<a href="#" class="close"><img src="Images/close_popup.png" class="btn_close" title="Close" alt="Close" /></a>');
+
+                    //Récupération du margin, qui permettra de centrer la fenêtre - on ajuste de 80px en conformité avec le CSS
+                    var popMargTop = ($('#' + popID).height() + 80) / 2;
+                    var popMargLeft = ($('#' + popID).width() + 80) / 2;
+
+                    //Apply Margin to Popup
+                    $('#' + popID).css({
+                        'margin-top': -popMargTop,
+                        'margin-left': -popMargLeft
+                    });
+
+                    //Apparition du fond
+                    $('body').append('<div id="fade"></div>');
+                    $('#fade').css({'filter': 'alpha(opacity=80)'}).fadeIn();
+
+                });
+
+
+                //enlève la pop-up
+                $('body').on('click', 'a.close, #fade', function() { //Au clic sur le body...
+                    $('#fade , .popup_block').fadeOut(function() {
+                        $('#fade, a.close').remove();
+                        $('#fade, img.imgpop').remove();
+                    });
+                });
+            
+            
+            /******************************Tableau Image*******************************
+             * ************************************************************************/
+                $('.img_d').click(function() {
+                   var imgID = $(this).data('rel');
+                   var imgRU = $(this).data('ru');
+            
+                    stopSlide(); 
+                    rubrique = imgRU;
+                    positionSlide = imgID;
+                    configSlide();
+                });
+                
+            });
+
+        </script>
+    </body>
+</html>
